@@ -1,0 +1,672 @@
+:root {
+  /* Primary Theme Colors */
+  --primary-color: #56baff;
+  --secondary-color: #012844;
+  --accent-color: #ffffff;
+
+  /* Backgrounds */
+  --background-light: #ffffff;
+  --background-dark: #012844;
+
+  /* Text Colors */
+  --text-light: #f1f1f1;
+  --text-dark: #000000;
+
+  /* Border & Shadows */
+  --border-color: #dee2e6;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  /* Custom Highlights */
+  --highlight-color: #56baff;
+}
+
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+/* 🔧 EDIT: This makes your page max 1520px wide (for 1920px screen with 200px margin) */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Make navbar sticky */
+.navbar-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: #fff; /* Change if needed */
+}
+
+/* Set navbar height */
+.navbar {
+  height: 80px; /* Set your navbar height */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0;
+}
+
+/* 🔧 EDIT: Adjust logo height if needed */
+.logo img {
+  height: 80px;
+}
+
+/* Nav Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+/* 🔧 EDIT: Change link styles (color, hover, etc.) */
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+/* Theme toggle button */
+.theme-toggle button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.theme-toggle img {
+  width: 24px; /* 🔧 EDIT: Resize your theme icon if needed */
+  height: 24px;
+}
+
+/* Hamburger menu (hidden on desktop) */
+.hamburger {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.background-image {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* First image: background text */
+.portfolio-img {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  z-index: 0;
+  position: relative;
+  margin-top: -60px;
+  margin-bottom: -600px; /* Optional: pull hero image closer */
+}
+
+/* Second image: hero main image */
+.hero-img {
+  max-width: 100%;
+  max-height: 120vh;
+  object-fit: contain;
+  z-index: 2;
+  position: relative;
+  /* margin-top: -550px; */
+}
+
+.name-texts {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+  margin-top: -380px; /* 🔧 Moves both texts upward */
+  /* Optional horizontal shifts */
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+.first-name-txt,
+.second-name-txt {
+  font-size: 70px; /* 🔧 Resize */
+  font-weight: bold;
+  color: var(--highlight-color);
+  font-family: "Poppins", sans-serif;
+  position: relative; /* Required for z-index to work */
+  z-index: 2; /* Ensures text is above background/image */
+}
+
+.first-name-txt {
+  text-align: left;
+}
+
+.second-name-txt {
+  text-align: right;
+}
+
+.hero-discription {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Left side - text aligned left */
+.leftside-discription {
+  flex: 1;
+  text-align: left;
+}
+
+.leftside-discription p {
+  font-size: 20px; /* Resize text */
+  font-weight: 900;
+  letter-spacing: -1px;
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  margin: 0;
+}
+
+/* Right side - content aligned right */
+.right-discription {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px; /* Space between button and icons */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Button style */
+.right-discription button {
+  background-color: var(--accent-color);
+  color: var(--text-dark);
+  border: none;
+  padding: 10px 20px;
+  border: solid 3px var(--text-dark);
+  border-radius: 50px;
+  font-weight: 900;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.right-discription button:hover {
+  background-color: #0b5ed7;
+}
+
+/* Style the list items holding the icons */
+.right-discription li {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+/* Style images inside list items */
+.right-discription li img {
+  width: 30px; /* Resize icons */
+  height: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.right-discription li img:hover {
+  transform: scale(1.1);
+}
+.scrolling-text-wrapper {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--background-light);
+  border-top: solid 3px var(--text-dark);
+  border-bottom: solid 3px var(--text-dark);
+  color: var(--text-dark);
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  margin-top: 120px;
+}
+
+/* 🔧 Left and Right Blur Effect */
+.scrolling-text-wrapper::before,
+.scrolling-text-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 150px; /* width of the blurred edge */
+  height: 100%;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.scrolling-text-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, var(--accent-color), transparent);
+}
+
+.scrolling-text-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, var(--accent-color), transparent);
+}
+
+.scrolling-text {
+  position: absolute;
+  white-space: nowrap;
+  animation: scroll-left 15s linear infinite;
+}
+
+.scrolling-text p {
+  display: inline-block;
+  font-size: 48px;
+  font-weight: 600;
+  padding-right: 2rem;
+}
+@keyframes scroll-left {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: -200%;
+  }
+}
+
+
+/* 📱 Mobile: Portrait (<480px) */
+@media only screen and (max-width: 480px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+
+  .logo img {
+    height: 60px;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    background: var(--background-light);
+    position: absolute;
+    top: 80px;
+    right: 10px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+    z-index: 1000;
+  }
+
+  .portfolio-img {
+    max-width: 100%;
+    object-fit: contain;
+    z-index: 0;
+    position: relative;
+    margin-top: 0;
+    margin-bottom: -200px;
+  }
+
+  .hero-img {
+    max-width: 100%;
+    max-height: 45vh;
+    object-fit: contain;
+    z-index: 2;
+    position: relative;
+  }
+
+  .name-texts {
+    margin-top: -0px;
+    margin-left: -20px;
+    margin-right: -20px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .first-name-txt,
+  .second-name-txt {
+    font-size: 55px;
+    text-align: center;
+    line-height: 50px;
+  }
+  .hero-discription {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px 20px;
+    box-sizing: border-box;
+  }
+  .leftside-discription {
+    text-align: center;
+  }
+  .leftside-discription p {
+    font-size: 24px;
+  }
+
+  .right-discription {
+    padding-top: 20px;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .right-discription button {
+    padding: 5px 10px;
+    font-size: 16px;
+  }
+
+  .right-discription li {
+    margin-left: 10px;
+  }
+  
+}
+
+/* 📱 Mobile: Landscape (481px–767px) */
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+
+  .logo img {
+    height: 60px;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    background: var(--background-light);
+    position: absolute;
+    top: 80px;
+    right: 10px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+    z-index: 1000;
+  }
+
+  .portfolio-img {
+    max-width: 100%;
+    object-fit: contain;
+    z-index: 0;
+    position: relative;
+    margin-top: 0;
+    margin-bottom: -200px;
+  }
+
+  .hero-img {
+    max-width: 100%;
+    max-height: 45vh;
+    object-fit: contain;
+    z-index: 2;
+    position: relative;
+  }
+
+  .name-texts {
+    margin-top: -0px;
+    margin-left: -20px;
+    margin-right: -20px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .first-name-txt,
+  .second-name-txt {
+    font-size: 55px;
+    text-align: center;
+    line-height: 50px;
+  }
+  .hero-discription {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px 20px;
+    box-sizing: border-box;
+  }
+  .leftside-discription {
+    text-align: center;
+  }
+  .leftside-discription p {
+    font-size: 24px;
+  }
+
+  .right-discription {
+    padding-top: 20px;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .right-discription button {
+    padding: 5px 10px;
+    font-size: 16px;
+  }
+
+  .right-discription li {
+    margin-left: 10px;
+  }
+  
+}
+
+/* 📱 Tablets: Portrait (768px–1023px) */
+@media only screen and (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+
+  .logo img {
+    height: 60px;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    background: var(--background-light);
+    position: absolute;
+    top: 80px;
+    right: 10px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+    z-index: 1000;
+  }
+
+  .portfolio-img {
+    max-width: 100%;
+    object-fit: contain;
+    margin-top: -60px;
+    margin-bottom: -462px;
+  }
+
+  .hero-img {
+    max-width: 100%;
+    max-height: 100vh;
+    object-fit: contain;
+  }
+
+  .name-texts {
+    margin-top: -300px;
+    margin-left: -20px;
+    margin-right: -20px;
+    justify-content: space-between;
+  }
+
+  .first-name-txt,
+  .second-name-txt {
+    font-size: 55px;
+  }
+
+  .leftside-discription p {
+    font-size: 16px;
+  }
+
+  .right-discription {
+    gap: 0px;
+    justify-content: flex-end;
+  }
+
+  .right-discription button {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+
+  .right-discription li {
+    margin-left: 10px;
+  }
+  
+}
+
+/* 💻 Tablets: Landscape (768px–1023px) */
+@media only screen and (min-width: 768px) and (max-width: 1023px) and (orientation: landscape) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+
+  .logo img {
+    height: 60px;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    background: var(--background-light);
+    position: absolute;
+    top: 80px;
+    right: 10px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+    z-index: 1000;
+  }
+
+  .portfolio-img {
+    max-width: 100%;
+    object-fit: contain;
+    margin-top: -60px;
+    margin-bottom: -365px;
+  }
+
+  .hero-img {
+    max-width: 100%;
+    max-height: 100vh;
+    object-fit: contain;
+  }
+
+  .name-texts {
+    margin-top: -380px;
+    margin-left: -20px;
+    margin-right: -20px;
+    padding: 0;
+    justify-content: space-between;
+  }
+
+  .first-name-txt,
+  .second-name-txt {
+    font-size: 55px;
+  }
+  .hero-discription {
+    padding: 0;
+  }
+
+  .leftside-discription p {
+    font-size: 16px;
+  }
+
+  .right-discription {
+    gap: 0px;
+    justify-content: flex-end;
+  }
+
+  .right-discription button {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+
+  .right-discription li {
+    margin-left: 10px;
+  }
+ 
+}

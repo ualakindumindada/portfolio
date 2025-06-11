@@ -1,0 +1,55 @@
+.about-section {
+    margin-top: 50px;
+  /* padding: 40px; */
+  background-color: #f4f4f4;
+}
+
+.about-container {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Left Column */
+.left-column {
+  flex: 1;
+  background-color: #add8e6; /* Light Blue */
+  padding: 20px;
+}
+
+/* Right Column */
+.right-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background-color: #ffe4b5; /* Moccasin */
+}
+
+/* Row 1 */
+.row1 {
+  background-color: #90ee90; /* Light Green */
+  padding: 20px;
+}
+
+/* Row 2 */
+.row2 {
+  display: flex;
+  gap: 20px;
+}
+
+/* Row 2 Columns */
+.about-left,
+.about-right {
+  flex: 1;
+  padding: 20px;
+}
+
+.about-left {
+  background-color: #ffcccb; /* Light Red */
+}
+
+.about-right {
+  background-color: #d3d3d3; /* Light Gray */
+}

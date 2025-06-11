@@ -1,0 +1,157 @@
+
+/* ========== Tablet View (768px - 1024px) ========== */
+@media screen and (max-width: 1024px) {
+  .portfolio-img {
+    max-width: 100%;
+    max-height: auto;
+    object-fit: contain;
+    z-index: 0;
+    position: relative;
+    margin-top: -60px;
+    margin-bottom: -445px; /* Optional: pull hero image closer */
+  }
+
+  /* Second image: hero main image */
+  .hero-img {
+    max-width: 100%;
+    max-height: 100vh;
+    object-fit: contain;
+    z-index: 2;
+    position: relative;
+    /* margin-top: -550px; */
+  }
+  .name-texts {
+    margin-top: -380px; /* 🔧 Moves both texts upward */
+    /* Optional horizontal shifts */
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+  .first-name-txt,
+  .second-name-txt {
+    font-size: 55px; /* 🔧 Resize */
+  }
+  /* Right side - content aligned right */
+  .right-discription {
+    gap: 0px; /* Space between button and icons */
+  }
+  .leftside-discription p {
+    font-size: 16px; /* Resize text */
+  }
+  /* Button style */
+  .right-discription button {
+    padding: 5px 10;
+    font-size: 12px;
+  }
+  .right-discription li {
+    margin-left: 10px;
+  }
+
+  /* Style images inside list items */
+  .right-discription li img {
+    width: 30px; /* Resize icons */
+    height: 30px;
+  }
+}
+@media screen and (max-width: 896px) {
+    .first-name-txt,
+    .second-name-txt {
+      font-size: 45px; /* 🔧 Resize */
+    }
+  }
+
+/* ========== Mobile View (Up to 768px) ========== */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 10px;
+    
+  }
+
+  .logo img {
+    height: 60px;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    background: var(--background-light);
+    position: absolute;
+    top: 80px;
+    right: 10px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+    z-index: 1000;
+  }
+
+  .hero-content {
+    padding: 0 15px;
+    text-align: center;
+  }
+  .portfolio-img {
+    max-width: 100%;
+    max-height: auto;
+    object-fit: contain;
+    z-index: 0;
+    position: relative;
+    margin-top: -30px;
+    margin-bottom: -245px; /* Optional: pull hero image closer */
+  }
+
+  /* Second image: hero main image */
+  .hero-img {
+    max-width: 100%;
+    max-height: 100vh;
+    object-fit: contain;
+    z-index: 2;
+    position: relative;
+    /* margin-top: -550px; */
+  }
+
+  .name-texts {
+    /* flex-direction: column; */
+    align-items: center;
+    margin-top: -400px;
+    padding: 0;
+  }
+
+  .first-name-txt,
+  .second-name-txt {
+    font-size: 36px;
+    text-align: center;
+  }
+
+  .hero-discription {
+    z-index: 3;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 0 15px;
+    text-align: center;
+    padding-top: 400px;
+  }
+
+  .right-discription {
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .right-discription button {
+    margin-bottom: 10px;
+  }
+}
